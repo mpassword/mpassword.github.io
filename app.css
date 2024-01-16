@@ -1,0 +1,210 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    max-width: 800px;
+    font-size: 18px !important;
+
+    color: #eee;
+    background-color: rgb(14, 13, 13);
+    
+
+}
+
+/* Full-width input fields */
+input[type=text], input[type=number],input[type=password],select {
+  width: 100%;
+  padding: 12px 10px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid transparent !important;
+  box-sizing: border-box;
+
+  /*background-color: #0c0c0c;*/
+  background-color: transparent !important;
+  color: #eee;
+
+  font-size: 18px ;
+ 
+  border-top: 1px #eee !important;
+  border-bottom: 1px solid #3c3c3d !important;
+  border-left: 10px solid transparent !important;
+  border-right:10px solid transparent !important;
+  
+  
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #1d1d1d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid rgb(87, 84, 84);
+  cursor: pointer;
+  width: 100%;
+
+}
+
+button:hover {
+  opacity: 0.8;
+  color: #000000;
+  font-weight: bolder;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px #ffffff ;
+}
+
+
+.container {
+  padding: 16px;
+  border: 5px solid #1f1f1f;
+  background: radial-gradient(#00000000 16%, rgb(0, 0, 0)) !important;
+  box-shadow: 0 0 500px #00000000 ;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgb(0, 0, 0); /* Black w/ opacity */
+  padding-top: 180px;
+
+}
+
+/* Modal Content/Box */
+.modal-content {
+  
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #313030;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width:400px;
+}
+
+.hide { display: none;}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.bgfg {
+    background-color: #161616fd;
+    color: #eee;
+}
+
+.form{
+    margin: 0px;background: transparent;border-color: #0000;
+}
+
+.genpass{
+    font-size: 30px !important;
+    font-weight: bolder;
+    padding: 1px 1px;
+    background-color: transparent !important; /*#161616fd*/
+    text-align: center;
+    font-family:  "Arial Black",'Courier New', 'Courier', 'monospace';
+    color: #696969 !important;
+    text-shadow: 0 0 10px #0e0d0d;
+    border: 1px solid #eee !important;
+}
+
+.pass1{
+  text-align: center;
+   font-size: 28px !important;
+  border: 1px solid #3c3c3d;
+  border-top: 0px #3c3c3d !important;
+  border-bottom: 1px solid #3c3c3d !important;
+  border-left: 0px solid #3c3c3d !important;
+  border-right: 0px solid #3c3c3d !important;
+  text-shadow: 0 0 10px #c2c2c2 !important;
+  color: #e4e4e4 !important;
+  cursor: grabbing;
+  font-size: 28px;
+}
+
+label{
+  color: #c9c9c9;
+  font-size: 18px !important;
+}
+
+meter{
+  height: 20px;
+  width: 80%;
+  background: #000000;
+}
+
+.showLowercse{
+  text-transform:lowercase;
+}
+
+.col-25 {
+  float: left;
+  width: 15%;
+  margin-top: 5%;
+}
+
+.col-75 {
+  float: left;
+  width: 85%;
+  margin-top: 1%;
+}
+
+.col-100 {
+  float: left;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.row{
+  display: block;
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+
+  .col-25,
+  .col-75,
+  input[type=button] {
+      width: 100%;
+      margin-top: 0;
+  }
+
+  body{
+    background-color: #000 !important;
+    
+  }
+
+ .container{
+  border: 10px solid rgb(0, 0, 0);
+  justify-items: center;
+ }
+
+ input[type=text], input[type=number],input[type=password],select {
+  font-size: 18px !important;
+}
+label{
+  color: #696969;
+}
+
+.pass1{
+  font-size: 28px !important;
+  color: #f35626;
+}
+
+
+  
+}

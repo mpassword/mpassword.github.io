@@ -1,0 +1,35 @@
+{
+    "name": "Master Password..|",
+    "short_name": "Master Password..|",
+    "description": "Master Password implimitation that derives the password",
+    "id":"/",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#080808",
+    "theme_color": "#080808",
+    "orientation": "portrait-primary",   
+    "icons": [
+      {
+        "src": "app.svg",
+        "sizes": "48x48 72x72 96x96 128x128 256x256 512x512",
+        "type": "image/svg+xml",
+        "purpose": "any"
+      }
+    ],
+    "screenshots": [
+        {
+         "src": "/ss/capture.png",
+          "sizes": "600x655",
+          "type": "image/png",
+          "form_factor": "wide",
+          "label": "Master Password"
+        },
+        {
+            "src": "/ss/capture.png",
+             "sizes": "600x655",
+             "type": "image/png",
+             "form_factor": "narrow",
+             "label": "Master Password"
+           }
+    ]
+}

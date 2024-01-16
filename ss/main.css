@@ -1,0 +1,59 @@
+
+body {
+    margin: auto;
+    max-width: 800px;
+    font-family: Arial;
+    font-size: 18px;
+    background-color:#4441416b;
+    color: #000000;
+    background-color: rgb(63,94,251);
+    background: linear-gradient(225deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+.hide{
+    display: none;
+}
+
+.container {
+    border-radius: 0px;
+    background-color:#0a0a0abe;
+    color: #eee;
+    padding: 10px;
+    max-width: 800px;
+    /*width: 1400px;*/
+    top:0%;
+    position:relative;
+    border: 1px solid #000;
+}
+.form{
+    margin: 0px;background: transparent;border-color: #0000;
+}
+
+.whitebox{
+    font-size: 30px !important;
+    font-weight: bolder;
+    padding: 10px 10px;
+    background-color: #0a0a0ab0 !important;
+    text-align: center;
+    font-family:  'Courier New', 'Courier', 'monospace';
+    color: #eee !important;
+    text-shadow: 0 0 10px #000000;
+    border: 20px solid #000;
+  }
+
+  input[type=text],input[type=password], input[type=number],select
+  {
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid #252525;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 18px;
+    background-color: #05050500;
+    color: #eee;
+
+    border-top: 0px transparent !important;
+    border-bottom: 1px solid #ffffff !important;
+    border-left: 1px solid transparent !important;
+    border-right: 1px solid transparent !important;
+  }

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Master Password</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js"></script> 
+  <link rel="manifest" href="manifest.json" />
+
+</head>
+<body onload="Load()">
+  
+
+
+<div id="loginmod" class="modal hide1">
+  <form class="modal-content bgfg">
+    <div class="container">
+        <p class="whitebox" style="text-align: center;text-shadow: 0 0px 5px #ffffff !important;">Master Password...|</p>
+      <!--<label for="uname"><b>Username</b></label> -->
+      <input id="tf_uname" type="text" placeholder="Enter Username" name="uname" required>
+
+      <!--<label for="psw"><b>Password</b>&nbsp;</label>-->
+      <!--<meter id="mtr" low="0.26" optimum="0.9" high="0.76" ></meter>-->
+      <input id="tf_psw" type="password"   placeholder="Enter Password" name="psw" required>
+<br>
+      <button id="bt_login" type="button" onClick="Login()">Login</button>
+      <input id="mpwver" type="number" style="display: none;" value="3">
+      
+      <p id="status1" style="font-size: 10px;">Please enter the username & password it could be anything, this is the only thing you need to remember.</p>
+     
+
+    </div>
+  </form>
+</div>
+
+
+<div class="container bgfg">
+    <!--<input id="genPass1" class="genpass" type="text"  readonly value="Master Password...|">-->
+    <!--<meter id="mtr1" low="0.26" optimum="0.9" high="0.76" readonly></meter>-->
+    
+  <fieldset class="form">
+   
+          <div class="row">                        
+              <div class="col-100">
+                  <input id="genPass" class="pass1" type="text"  readonly value="..." onclick="copyClipboard()">
+              </div>
+          </div>
+
+      <div class="row">
+          <div class="col-25">
+              <label>Site:</label>
+          </div>
+          <div class="col-75">
+              <input id="site" type="text"  name="site" required placeholder="website like example.com" >
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-25">
+              <label>Counter:</label>
+          </div>
+          <div class="col-75">
+              <input id="counter"  type="number" name="counter" required min=1 max=4294967295 value=1 >
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-25">
+              <label>Context:</label>
+          </div>
+          <div class="col-75">
+              <input id="context" type="text"  name="context" placeholder="Type Purpose (Not Mandatory)"
+                  onchange="calculateUnit()">
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-25">
+              <label>Template:</label>
+          </div>
+          <div class="col-75">
+              <select id="template" name="template" required>
+                  <option value="maximum">Maximum</option>
+                  <option value="long" selected>Long</option>
+                  <option value="medium">Medium</option>
+                  <option value="basic">Basic</option>
+                  <option value="short">Short</option>
+                  <option value="pin">PIN</option>
+                  <option value="name">Name</option>
+                  <option value="phrase">Phrase</option>
+              </select>
+          </div>
+      </div>
+
+      <div  class="row">
+          <div class="col-25">
+              <label>Type:</label>
+          </div>
+          <div class="col-75">
+              <select id="type" name="type" required>
+                  <option value="identification">Identification (Username)</option>
+                  <option value="authentication" selected="">Authentication (Password)</option>
+                  <option value="recovery">Recovery (Security Answer)</option>
+              </select>
+          </div>
+      </div>
+    
+
+  </fieldset>
+  <br>
+  <p><code class="error"><noscript>You must have JavaScript enabled for this page to
+    work.</noscript></code></p>
+</div>
+
+
+<script>
+    // Test for required ES6 features
+    // This test must be in a seperate script tag as they are
+    // language features and ES5 parsers will hard-fail otherwise
+
+    // If the ES6 class, let, destructive assignment and rest arguments
+    // are supported, this will be successful and ES6 files will be loaded
+    // rather than the transpiled files
+    class $ES6 { constructor() { let b = true; this.b = b; } }
+    const [canES6] = ((...args) => args)(new $ES6().b);
+    </script>
+    <script>
+        // If the needed ES6 features aren't supported the ES6 to ES5
+        // transpiled files will be loaded instead
+        var esdir = (typeof canES6 !== "undefined" && canES6) ? "" : "es5/";
+
+        // If setImmediate is not implemented we include the polyfill
+        window.setImmediate || document.write("<script src=" + esdir + "setImmediate-polyfill.js><\/script>");
+
+        // If Typed Arrays are not supported we include the polyfill
+        // https://github.com/inexorabletash/polyfill
+        window.ArrayBuffer || document.write("<script src=typedarray-polyfill.js><\/script>");
+
+        // If TextEncoder is not supported we include the polyfill
+        // https://github.com/inexorabletash/text-encoding
+        window.TextEncoder || document.write("<script src=encoding-polyfill.js><\/script>");
+
+        // If Promise is not supported we include the polyfill
+        // https://github.com/taylorhakes/promise-polyfill
+        window.Promise || document.write("<script src=promise-polyfill.js><\/script>");
+
+        // Alias window.crypto.subtle with window.crypto.webkitSubtle if
+        // the latter but not the former is supported
+        if (!window.crypto.subtle && window.crypto.webkitSubtle) {
+            window.crypto.subtle = window.crypto.webkitSubtle;
+        }
+
+        // If Web Crypto API is not supported we include a JS crypto library
+        // https://code.google.com/p/crypto-js/
+        if (!window.crypto.subtle) {
+            document.write(
+                "<script src=https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js><\/script>"
+            );
+            document.write(
+                "<script src=https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/pbkdf2.js><\/script>");
+            document.write(
+                "<script src=https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/lib-typedarrays-min.js><\/script>"
+            );
+        }
+
+        // If MAX_SAFE_INTEGER (ES6) is not defined, define it
+        if (!Number.MAX_SAFE_INTEGER) {
+            Number.MAX_SAFE_INTEGER = Math.pow(2, 53) - 1;
+        }
+
+        // If your borwser needs a lot of polyfills consider upgrading
+        // to a more modern feature rich browser, if you are a browser
+        // developer considering adding these much needed features already!
+        // :D
+
+        // Include the scrypt implementation
+        document.write("<script src=" + esdir + "lib/pbkdf2.js><\/script>");
+        document.write("<script src=" + esdir + "lib/scrypt.js><\/script>");
+
+        // Include the MPW class
+        document.write("<script src=" + esdir + "lib/mpw.js><\/script>");
+    </script>
+
+    
+<!--script>
+    var input_pswd = ctrl("#tf_psw");
+
+input_pswd.addEventListener("input", () => { 
+
+    checkPassword(input_pswd.value);
+},false);
+
+function checkPassword(pssw)
+{
+    var streangth = 0;
+
+    if(pssw.match(/[a-z]/))
+        streangth += 0.2;
+    
+    if(pssw.match(/[A-Z]/))
+        streangth += 0.2;
+    
+    if(pssw.match(/[0-9]/))
+        streangth += 0.2;
+
+    if(pssw.match(/[!@#$%^&*()_+-=]/))
+        streangth += 0.2;
+
+    if(pssw.length > 8)
+        streangth += 0.2;
+
+    var mtr = ctrl("#mtr1");
+    mtr.value = streangth;
+}
+</script-->
+</body>
+</html>
