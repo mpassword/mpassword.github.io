@@ -2,12 +2,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: auto;
     max-width: 800px;
-    font-size: 18px !important;
-
-    color: #eee;
-    background-color: rgb(14, 13, 13);
+    font-size: 20px !important;
     
-
+    color: #eee;
+    background-color: rgb(0 0 0);
 }
 
 /* Full-width input fields */
@@ -24,13 +22,17 @@ input[type=text], input[type=number],input[type=password],select {
   color: #eee;
 
   font-size: 18px ;
- 
+  font-family:"Courier New" !important;
   border-top: 1px #eee !important;
   border-bottom: 1px solid #3c3c3d !important;
   border-left: 10px solid transparent !important;
   border-right:10px solid transparent !important;
   
   
+}
+
+select:focus{
+   background-color: #161616 !important;
 }
 
 /* Set a style for all buttons */
@@ -55,10 +57,10 @@ button:hover {
 
 
 .container {
-  padding: 16px;
+  /* padding: 16px; */
   border: 5px solid #1f1f1f;
-  background: radial-gradient(#00000000 16%, rgb(0, 0, 0)) !important;
-  box-shadow: 0 0 500px #00000000 ;
+  background: radial-gradient(#2b2a2a 16%, rgb(0, 0, 0)) !important;
+  box-shadow: 0 0 500px #00000000;
 }
 
 span.psw {
@@ -123,7 +125,7 @@ button:focus {
 
 .pass1{
   text-align: center;
-   font-size: 28px !important;
+  font-size: 38px !important;
   border: 1px solid #3c3c3d;
   border-top: 0px #3c3c3d !important;
   border-bottom: 1px solid #3c3c3d !important;
@@ -132,7 +134,7 @@ button:focus {
   text-shadow: 0 0 10px #c2c2c2 !important;
   color: #e4e4e4 !important;
   cursor: grabbing;
-  font-size: 28px;
+  font-family:"Courier New" !important;
 }
 
 label{
@@ -189,22 +191,19 @@ meter{
   }
 
  .container{
-  border: 10px solid rgb(0, 0, 0);
+  /* border: 10px solid rgb(0, 0, 0); */
   justify-items: center;
  }
 
- input[type=text], input[type=number],input[type=password],select {
-  font-size: 18px !important;
-}
-label{
-  color: #696969;
-}
 
-.pass1{
-  font-size: 28px !important;
-  color: #f35626;
-}
+  label{
+    color: #696969;
+  }
+    
+  .pass1{
+    font-size: 28px !important;
+    color: #f35626;
+  }
 
 
-  
 }
